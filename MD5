@@ -1,0 +1,11 @@
+fc82a781b3f74df7eb98da63b08a474b *DESCRIPTION
+df165aeabf5835f1dc7113cfc9bc200f *NAMESPACE
+3bfc1c81780f8ee8e302acfb392b5d85 *R/ConductMultipleSurveys.R
+d83c06430bdb3d4683baa1d7985ac71f *R/GetTotalValues.R
+48a4e5c28699840c2fb9eb14b115f26c *R/MakeAnglers.R
+3ec6142fc8a1244525a304e6f369d759 *R/SimulateBusRoute.R
+61a02fbd79d1ea9fa95a4b04aa3f6dab *man/AnglerCreelSurveySimulation-package.Rd
+7026368d6d3a28f119278f27d4abb47d *man/ConductMultipleSurveys.Rd
+70670d8fdff1a680db42df678ae82998 *man/GetTotalValues.Rd
+41e67749a6250233eec64c332a1c44f1 *man/MakeAnglers.Rd
+4b00545ef12ac32de4c632a42cdaaa5e *man/SimulateBusRoute.Rd
