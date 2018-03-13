@@ -130,7 +130,7 @@ get_total_values <- function(data, start_time = NULL, end_time = NULL,
   #Effort of anglers that were onsite for the duration of the time that the clerk
   # was onsite
   #How many anglers were at the site the entire time the creel surveyor was there?
-  n_anglers_entire_time <- length(which(data$start_time < start_time & data$departure_time > end_time))
+  n_anglers_entire_time <- length(which(data$start_time <= start_time & data$departure_time >= end_time))
   entire_time <- which(data$start_time <= start_time & data$departure_time >= end_time)
 
   #how long were the anglers that arrived after the creel there before the clerk left?
@@ -179,7 +179,8 @@ get_total_values <- function(data, start_time = NULL, end_time = NULL,
   data$trip_length[entire_time] <- wait_time
   data$trip_length[arrivals] <- end_time - data$start_time[arrivals]
   data$trip_length[which_angler_departures] <- data$departure_time[which_angler_departures] - start_time
-  data$trip_length[which_arr_dep] <- data$departure_time[which_arr_dep] - start_time
+  data$trip_length[which_arr_dep] <- data$departure_time[which_arr_dep] - data$start_time[which_arr_dep]
+  data$trip_length[completed_trips] <- data$departure_time[completed_trips] - data$start_time[completed_trips]
   
 
   #Scale triplength based upon the sampling probability
@@ -197,7 +198,7 @@ get_total_values <- function(data, start_time = NULL, end_time = NULL,
              start_time = start_time, 
              wait_time = wait_time, 
              total_catch = total_catch, 
-             true_effort = sum(data$trip_length), 
+             true_effort = t_effort, 
              mean_lambda = mean(lambda)) %>%
     return()
   
